@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Frequently Asked Questions</title>
+    <link rel="stylesheet" href="css/Faqs.css">
+</head>
+<body>
+    <div class="faq-container">
+        <h1>Frequently Asked Questions (FAQs)</h1>
+
+        <div class="faq-item">
+            <button class="faq-question">Apa itu Smart Home?</button>
+            <div class="faq-answer">
+                <p>Smart Home adalah sistem yang menghubungkan perangkat elektronik di rumah, sehingga dapat dikendalikan melalui internet, memberikan kenyamanan dan efisiensi energi.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Bagaimana cara menghubungkan perangkat ke Smart Home?</button>
+            <div class="faq-answer">
+                <p>Anda dapat menghubungkan perangkat ke Smart Home melalui aplikasi yang disediakan dan mengikuti petunjuk pemasangan perangkat pada aplikasi tersebut.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Apakah saya bisa mengontrol Smart Home dari jarak jauh?</button>
+            <div class="faq-answer">
+                <p>Ya, Anda dapat mengontrol perangkat Smart Home dari mana saja menggunakan aplikasi yang terhubung ke internet melalui smartphone Anda.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-question">Apakah ada biaya berlangganan untuk menggunakan Smart Home?</button>
+            <div class="faq-answer">
+                <p>Beberapa layanan dan fitur premium mungkin memerlukan biaya berlangganan, namun banyak fitur dasar yang dapat digunakan tanpa biaya tambahan.</p>
+            </div>
+        </div>
+         <!-- Tombol Kembali ke Halaman Utama -->
+         <a href="supprot.html" class="back-button">Kembali ke Beranda</a>
+    </div>
+
+    <script>// script.js
+      document.addEventListener("DOMContentLoaded", function() {
+          // Ambil semua elemen tombol pertanyaan
+          const faqQuestions = document.querySelectorAll(".faq-question");
+      
+          // Tambahkan event listener untuk setiap tombol
+          faqQuestions.forEach(function(question) {
+              question.addEventListener("click", function() {
+                  // Ambil elemen jawaban yang sesuai
+                  const answer = this.nextElementSibling;
+      
+                  // Toggle tampilan jawaban
+                  if (answer.style.display === "block") {
+                      answer.style.display = "none";
+                  } else {
+                      answer.style.display = "block";
+                  }
+              });
+          });
+      });
+      </script>
+</body>
+</html>

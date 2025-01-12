@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Chat</title>
+    <link rel="stylesheet" href="css/chat.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box" id="chatBox">
+            <!-- Pesan akan muncul di sini -->
+        </div>
+        <input type="text" id="userMessage" placeholder="Ketik pesan Anda..." class="message-input" />
+        <button onclick="sendMessage()" class="send-button">Kirim</button>
+
+        <!-- Tombol Kembali ke Halaman Utama -->
+        <a href="supprot.html" class="back-button">Kembali ke Beranda</a>
+    </div>
+
+    <script>
+      // script.js
+      function sendMessage() {
+          var userMessage = document.getElementById("userMessage").value;
+          
+          if (userMessage.trim() === "") {
+              alert("Pesan tidak boleh kosong!");
+              return;
+          }
+      
+          // Menambahkan pesan pengguna
+          addMessage(userMessage, "user");
+      
+          // Menambahkan pesan bot
+          setTimeout(() => {
+              addMessage("Terima kasih sudah mengirim pesan! Kami akan segera merespon.", "bot");
+          }, 1000); // Delay 1 detik untuk pesan bot
+      
+          // Reset input setelah mengirim
+          document.getElementById("userMessage").value = "";
+          document.getElementById("chatBox").scrollTop = document.getElementById("chatBox").scrollHeight;
+      }
+      
+      function addMessage(message, sender) {
+          var chatBox = document.getElementById("chatBox");
+          var messageElement = document.createElement("div");
+          
+          messageElement.classList.add("message");
+      
+          if (sender === "user") {
+              messageElement.classList.add("user-message");
+          } else if (sender === "bot") {
+              messageElement.classList.add("bot-message");
+          }
+      
+          messageElement.textContent = message;
+          chatBox.appendChild(messageElement);
+      }
+    </script>
+</body>
+</html>
